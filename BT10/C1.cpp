@@ -29,20 +29,20 @@ struct String {
     }
     // muc e
     void Append(const char* text) {
-        char* temp = new char[n];        
+               
         int m = 0;
         for (const char *p = text; (*p) != '\0'; p++) m++;
+
+        char* temp = new char[n+m]; 
 
         for (int i=0; i < n; i++) {
             temp[i] = str[i];
         }
-
-        for (int i=n; i < m; i++) {
+        for (int i=n; i < n+m; i++) {
             temp[i] = text[i-n];
         }
-
-        m += n;
-        text = temp;
+        temp[m+n] = '\0';
+        str = temp;
     }
 };
 
@@ -51,8 +51,7 @@ int main() {
     String s("Hello");
     s.print();
 
-    String text("Minh Thu");
-    s.Append(text);
+    s.Append(" World");
 
-    text.print();
+    s.print();
 }
