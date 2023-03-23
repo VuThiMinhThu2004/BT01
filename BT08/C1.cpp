@@ -1,9 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-char* reverse (char *a) {
+char* reverse (const char *a) {
     int n = 0;//sizeof(a)
-    for (char *p = a; (*p)!= '\0'; p++) n++;
+    for (const char *p = a; (*p)!= '\0'; p++) n++;
 
     char temp[n];
     for (int i=0; i < n; i++) {
@@ -13,9 +13,9 @@ char* reverse (char *a) {
     return p;
 }
 
-char* delete_char(char *a, char c) {
+char* delete_char(const char *a, char c) {
     int n = 0;
-    for (char *p = a; (*p)!='\0'; p++) n++;
+    for (const char *p = a; (*p)!='\0'; p++) n++;
 
     char temp[n];
     int m = 0;
@@ -27,9 +27,9 @@ char* delete_char(char *a, char c) {
     return p;
 }
 
-char* pad_right(char *a, int n) {
+const char* pad_right(const char *a, int n) {
     int len = 0;
-    for (char *p = a; (*p)!= '\0'; p++) len++;
+    for (const char *p = a; (*p)!= '\0'; p++) len++;
 
     if(len >= n)  return a;
     else {
@@ -43,9 +43,9 @@ char* pad_right(char *a, int n) {
     }
 }
 
-char* pad_left(char *a, int n) {
+const char* pad_left(const char *a, int n) {
     int len = 0;
-    for (char *p = a; (*p)!= '\0'; p++) len++;
+    for (const char *p = a; (*p)!= '\0'; p++) len++;
 
     if (len >= n)  return a;
     else {
@@ -63,9 +63,9 @@ char* pad_left(char *a, int n) {
     }
 }
 
-char *truncate(char *a, int n) {
+const char *truncate(const char *a, int n) {
     int len = 0;
-    for (char *p = a; (*p)!= '\0'; p++) len++;
+    for (const char *p = a; (*p)!= '\0'; p++) len++;
 
     if (len < n) return a;
     else {
