@@ -1,16 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-char* reverse (const char *a) {
+void reverse (char *a) {
     int n = 0;//sizeof(a)
     for (const char *p = a; (*p)!= '\0'; p++) n++;
 
-    char temp[n];
-    for (int i=0; i < n; i++) {
-        temp[i] = a[n-i-1];
+    for (int i=0; i <= n/2; i++) {
+        char tmp;
+        tmp = a[i];
+        a[i] = a[n-i-1];
+        a[n-i-1] = tmp;
     }
-    char *p = temp;
-    return p;
 }
 
 char* delete_char(const char *a, char c) {
@@ -83,15 +83,13 @@ bool is_palindrome(char *a) {
     int len = 0;
     for (char *p= a; (*p)!= '\0'; p++) len++;
 
-    int i=0,j=len-1;
-    while(i < j) {
-        if(a[i] != a[j])    return false;
-        i++,j--;
+    for (int i=0; i <= len/2; i++) {
+        if (a[i] != a[len-i-1]) return false;
     }
     return true;
 }
 
-char* trim_left(char *a) {
+void trim_left(char *a) {
     int len = 0;
     for (char *p= a; (*p)!= '\0'; p++) len++;
 
@@ -107,7 +105,7 @@ char* trim_left(char *a) {
     temp[m] = '\0';
 }
 
-char* trim_right(char *a) {
+void trim_right(char *a) {
     int len = 0;
     for (char *p= a; (*p)!= '\0'; p++) len++;
 
@@ -127,7 +125,7 @@ char* trim_right(char *a) {
 int main() {
     char a[] = "abcd";
 
-    char *a_reverse =  reverse(a);
-    cout << a_reverse;
+    reverse(a);
+    cout << a;
 
 }

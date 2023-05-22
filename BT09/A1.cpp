@@ -9,6 +9,7 @@ char* concat(const char* s1, const char *s2) {
     char *p = new char[len];
     for (int i=0; i < n; i++) p[i] = s1[i];
     for (int j=0; j < m; j++) p[n+j] = s2[j];
+    p[len] = '\0';
     return p;
 }
 

@@ -11,7 +11,7 @@ Câu 1: Cho đoạn lệnh sau:
     cout << "*p3 = " << *p3 << ", p3 = " << p3 << endl;// => *p3 = B p3 = 0x5678
     p3 = p1;
     cout << "*p3 = " << *p3 << ", p3 = " << p3 << endl;// => *p3 = A p3 = 0x1234
-    cout << "*p1 = " << *p1 << ", p1 = " << p1 << endl;// => *p3 = A p3 = 0x1234
+    cout << "*p1 = " << *p1 << ", p1 = " << p1 << endl;// => *p1 = A p1 = 0x1234
 
 Câu 2: Cho các lệnh sau:
     int *p;

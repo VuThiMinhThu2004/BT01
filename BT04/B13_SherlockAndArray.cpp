@@ -13,7 +13,6 @@ int main() {
             cin >> a[i];
             s[i] = s[i-1] + a[i];
         }
-        cout << endl;
         int ok = 0;
         for(int i=1; i <= n; i++) {
             if(s[i-1] == (s[n] - s[i])) { // ve trai = ve phai khogn tinh ptu a[i]
