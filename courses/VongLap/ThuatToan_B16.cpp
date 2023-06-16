@@ -1,3 +1,48 @@
+#include <iostream>
+#include <map>
+#include <set>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int n; cin >> n;
+    vector<int> a(n);
+    for (int &x : a) cin >> x;
+
+    sort(a.begin(), a.end());
+    set<multiset<int>> v;
+
+    for (int i = 0; i < n-2; i++) {
+        int j = i+1, k = n-1;
+        while (j < k) {
+            int sum = a[i] + a[j] + a[k];
+
+            if (sum == 0) {
+                multiset<int> se = {a[i], a[j], a[k]};
+                v.insert(se);
+                j++; k--;
+                
+                while (j < k && a[j] == a[j-1]) j++;
+                while (j < k && a[k] == a[k+1]) k--;
+            }
+            else if (sum > 0) {
+                k--;
+            }
+            else j++;
+
+            while (i < n-2 && a[i] == a[i+1]) i++;
+        }
+    }
+
+    for (auto it : v) {
+        for (auto x : it) {
+            cout << x << " ";
+        }
+        cout << "\n";
+    }
+}
+/*
 #include "bits/stdc++.h"
 using namespace std;
 
@@ -40,6 +85,7 @@ int main() {
     }
 }
 
+*/
 
 /*
 #include "bits/stdc++.h"
@@ -73,4 +119,51 @@ int main() {
         }
     }
 }
+
+
+#include <iostream>
+#include <map>
+#include <set>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    int n; cin >> n;
+    vector<int> a(n);
+    for (int &x : a) cin >> x;
+
+    sort(a.begin(), a.end());
+    set<multiset<int>> v;
+
+    for (int i = 0; i < n-2; i++) {
+        int j = i+1, k = n-1;
+        while (j < k) {
+            int sum = a[i] + a[j] + a[k];
+
+            if (sum == 0) {
+                multiset<int> se = {a[i], a[j], a[k]};
+                v.insert(se);
+                j++; k--;
+                
+                while (j < k && a[j] == a[j-1]) j++;
+                while (j < k && a[k] == a[k+1]) k--;
+            }
+            else if (sum > 0) {
+                k--;
+            }
+            else j++;
+
+            while (i < n-2 && a[i] == a[i+1]) i++;
+        }
+    }
+
+    for (auto it : v) {
+        for (auto x : it) {
+            cout << x << " ";
+        }
+        cout << "\n";
+    }
+}
 */
+

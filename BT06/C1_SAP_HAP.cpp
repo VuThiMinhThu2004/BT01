@@ -2,7 +2,7 @@
 
 using namespace std;
 
-const int n = 2;
+const int n = 3;
 int a[n];
 int M[n];
 
